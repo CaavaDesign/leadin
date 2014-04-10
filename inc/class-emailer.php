@@ -3,11 +3,11 @@
 // LI_Emailer Class
 //=============================================
 class LI_Emailer {
-	
+
 	/**
 	 * Class constructor
 	 */
-	function LI_Emailer () 
+	function LI_Emailer ()
 	{
 
 	}
@@ -18,29 +18,29 @@ class LI_Emailer {
 	 * @param	string
 	 * @return	bool $email_sent 	Whether the email contents were sent successfully. A true return value does not automatically mean that the user received the email successfully. It just only means that the method used was able to process the request without any errors.
 	 */
-	function send_new_lead_email ( $hashkey ) 
+	function send_new_lead_email ( $hashkey )
 	{
 		$history = $this->get_lead_history($hashkey);
 
 		$avatar_img = "https://app.getsignals.com/avatar/image/?emails=" . $history->lead->lead_email;
-		
+
 		// @EMAIL - Use this variable to concatenate your HTML
 		$body = "";
 
 		// Email Base open
 		$body .= "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'><html xmlns='http://www.w3.org/1999/xhtml' xmlns='http://www.w3.org/1999/xhtml'><head><meta http-equiv='Content-Type' content='text/html;charset=utf-8'/><meta name='viewport' content='width=device-width'/></head><body style='width: 100% !important;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #222222;display: block;font-family: Helvetica, Arial, sans-serif;font-weight: normal;text-align: left;line-height: 19px;font-size: 14px;margin: 0;padding: 0;'><style type='text/css'>a:hover{color: #2795b6 !important;}a:active{color: #2795b6 !important;}a:visited{color: #2ba6cb !important;}h1 a:active{color: #2ba6cb !important;}h2 a:active{color: #2ba6cb !important;}h3 a:active{color: #2ba6cb !important;}h4 a:active{color: #2ba6cb !important;}h5 a:active{color: #2ba6cb !important;}h6 a:active{color: #2ba6cb !important;}h1 a:visited{color: #2ba6cb !important;}h2 a:visited{color: #2ba6cb !important;}h3 a:visited{color: #2ba6cb !important;}h4 a:visited{color: #2ba6cb !important;}h5 a:visited{color: #2ba6cb !important;}h6 a:visited{color: #2ba6cb !important;}.button:hover table td{background: #2795b6 !important;}.tiny-button:hover table td{background: #2795b6 !important;}.small-button:hover table td{background: #2795b6 !important;}.medium-button:hover table td{background: #2795b6 !important;}.large-button:hover table td{background: #2795b6 !important;}.button:hover{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.button:active{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.button:visited{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.tiny-button:hover{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.tiny-button:active{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.tiny-button:visited{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.small-button:hover{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.small-button:active{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.small-button:visited{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.medium-button:hover{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.medium-button:active{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.medium-button:visited{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.large-button:hover{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.large-button:active{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.large-button:visited{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.secondary:hover table td{background: #d0d0d0 !important;}.success:hover table td{background: #457a1a !important;}.alert:hover table td{background: #970b0e !important;}@media only screen and (max-width: 600px){table[class='body'] img{width: auto !important;height: auto !important;}table[class='body'] .container{width: 95% !important;}table[class='body'] .row{width: 100% !important;display: block !important;}table[class='body'] .wrapper{display: block !important;padding-right: 0 !important;}table[class='body'] .columns{table-layout: fixed !important;float: none !important;width: 100% !important;padding-right: 0px !important;padding-left: 0px !important;display: block !important;}table[class='body'] .column{table-layout: fixed !important;float: none !important;width: 100% !important;padding-right: 0px !important;padding-left: 0px !important;display: block !important;}table[class='body'] .wrapper.first .columns{display: table !important;}table[class='body'] .wrapper.first .column{display: table !important;}table[class='body'] table.columns td{width: 100%;}table[class='body'] table.column td{width: 100%;}table[class='body'] td.offset-by-one{padding-left: 0 !important;}table[class='body'] td.offset-by-two{padding-left: 0 !important;}table[class='body'] td.offset-by-three{padding-left: 0 !important;}table[class='body'] td.offset-by-four{padding-left: 0 !important;}table[class='body'] td.offset-by-five{padding-left: 0 !important;}table[class='body'] td.offset-by-six{padding-left: 0 !important;}table[class='body'] td.offset-by-seven{padding-left: 0 !important;}table[class='body'] td.offset-by-eight{padding-left: 0 !important;}table[class='body'] td.offset-by-nine{padding-left: 0 !important;}table[class='body'] td.offset-by-ten{padding-left: 0 !important;}table[class='body'] td.offset-by-eleven{padding-left: 0 !important;}table[class='body'] .expander{width: 9999px !important;}table[class='body'] .hide-for-small{display: none !important;}table[class='body'] .show-for-desktop{display: none !important;}table[class='body'] .show-for-small{display: inherit !important;}table[class='body'] .hide-for-desktop{display: inherit !important;}table[class='body'] .container.main{width: 100% !important;}}</style><table class='body' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;height: 100%;width: 100%;padding: 0;'><tr align='left' style='vertical-align: top; text-align: left; padding: 0;'><td class='center' align='center' valign='top' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: center;padding: 0 0 20px;'><center style='width: 100%;'>";
-		
+
 		// Email Header open
 		$body .= "<table class='row header' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;width: 100%;position: relative;padding: 0px;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td class='center' align='center' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: center;padding: 0;' valign='top'><center style='width: 100%;'><table class='container' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: inherit;width: 580px;margin:0 auto 10px auto; padding: 0;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td class='wrapper last' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;position: relative;padding: 10px 0px 0px;' align='left' valign='top'><table class='twelve columns' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;width: 580px;margin: 0 auto;padding: 0;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td class='two sub-columns' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;width: 16.66667% !important;padding: 0px 3.44828% 10px 0px;' align='left' valign='top'><img width='77' height='77' src='" . $avatar_img . "' style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto;max-width: 100%;float: left;clear: both;display: block;' align='left'/></td><td class='ten sub-columns last' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: middle;text-align: left;width: 83.33333% !important;padding: 0px 0px 10px;' align='left' valign='middle'>";
 
 		$body .= "<h1 class='lead-name' style='color: #222222; display: block; font-family: Helvetica, Arial, sans-serif; font-weight: bold; text-align: left; line-height: 1.3; word-break: normal; font-size: 20px; margin: 0; padding: 0;' align='left'>" . $history->lead->lead_email . "</h1>";
-		
+
 		// Email Header close
 		$body .= "</td><td class='expander' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;visibility: hidden;width: 0px;padding: 0;' align='left' valign='top'></td></tr></table></td></tr></table></center></td></tr></table>";
 
 		// Main container open
 		$body .= "<table class='container main' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: inherit;width: 580px;margin: 0 auto;padding: 0;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;padding: 0;' align='left' valign='top'>";
-		
+
 		// Form Submission section open
 		$body .= "<table class='row section form-submission' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;width: 100%;position: relative;display: block;background: #deedf8;padding: 0px;' bgcolor='#deedf8'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td class='wrapper last' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;position: relative;padding: 0 0px 0 0;' align='left' valign='top'>";
 
@@ -49,7 +49,7 @@ class LI_Emailer {
 
 		// Form Submission Rows
 		$fields = json_decode(stripslashes($history->submission->form_fields), true);
-		
+
 		foreach ( $fields as $field )
 		{
 			$body .= $this->build_submission_row($field);
@@ -57,7 +57,7 @@ class LI_Emailer {
 
 		// Form Submission Section Close
 		$body .= "</td></tr></table>";
-		
+
 		// @EMAIL - end form section
 
 		// History section title
@@ -75,7 +75,7 @@ class LI_Emailer {
 			{
 				$body .= $this->build_history_row($pageview);
 			}
-			
+
 			// History section close
 			$body .= '</td></tr></table>';
 
@@ -106,7 +106,7 @@ class LI_Emailer {
 		$to = ( $options['li_email'] ? $options['li_email'] : get_bloginfo('admin_email') ); // Get email from plugin settings, if none set, use admin email
 
 		if ( $history->submission->form_type == "comment" )
-		{	
+		{
 			$subject = "New comment posted on " . $history->submission->form_page_title;
 			leadin_track_plugin_activity("New comment");
 			$subject .= " by " . $history->lead->lead_email;
@@ -119,7 +119,7 @@ class LI_Emailer {
 			$this->send_subscriber_confirmation_email($history);
 		}
 		else
-		{	
+		{
 			if ( $history->new_contact )
 			{
 				$subject = "New lead from " . get_bloginfo('name') . " - Say hello to " . $history->lead->lead_email;
@@ -147,16 +147,16 @@ class LI_Emailer {
 		global $wpdb;
 
 		$q = $wpdb->prepare(
-			"SELECT 
+			"SELECT
 				pageview_id,
-				DATE_FORMAT(pageview_date, %s) AS pageview_day, 
-				DATE_FORMAT(pageview_date, %s) AS pageview_date, 
-				lead_hashkey, pageview_title, pageview_url, pageview_source, pageview_session_start 
-			FROM 
-				li_pageviews 
-			WHERE 
+				DATE_FORMAT(pageview_date, %s) AS pageview_day,
+				DATE_FORMAT(pageview_date, %s) AS pageview_date,
+				lead_hashkey, pageview_title, pageview_url, pageview_source, pageview_session_start
+			FROM
+				li_pageviews
+			WHERE
 				lead_hashkey LIKE %s ORDER BY pageview_date ASC", '%b %e', '%b %e %l:%i%p', $hashkey);
-		
+
 		$pageviews = $wpdb->get_results($q);
 
 		$pageviews_by_session = array();
@@ -193,7 +193,7 @@ class LI_Emailer {
 	 * Builds the blue form submission header for the lead email
 	 * @param 	object $submission
 	 * @return 	string
-	 */		
+	 */
 	function build_submission_header ( $submission, $confirmation_email = FALSE )
 	{
 		// @EMAIL Use these variables to construct the heading for the form section
@@ -209,7 +209,7 @@ class LI_Emailer {
 
 		// Form Submission header content
 		$submissionHeader .= "<h3 style='color: #153d60;display: block;font-family: Helvetica, Arial, sans-serif;font-weight: bold;text-align: left;line-height: 1.3;word-break: normal;font-size: 16px;margin: 0;padding: 0;' align='left'>";
-		
+
 		if ( $form_submission_type == "comment" )
 		{
 			$submissionHeader .= "Commented on " . $form_page_title . " on " . $form_submission_day . ' at ' . $form_submission_time;
@@ -218,7 +218,7 @@ class LI_Emailer {
 		{
 			$submissionHeader .= ( $confirmation_email ? "You filled out the subscription form on " : "Filled out a form on " ) . $form_page_title . " on " . $form_submission_day . ' at ' . $form_submission_time;
 		}
-		
+
 		$submissionHeader .= "</h3>";
 
 		// Form Submission header close
@@ -231,7 +231,7 @@ class LI_Emailer {
 	 * Builds a row containing a form field in the submission section for the lead email
 	 * @param 	object $field
 	 * @return 	string
-	 */	
+	 */
 	function build_submission_row ( $field )
 	{
 		$submissionRow = "\r\n";
@@ -255,7 +255,7 @@ class LI_Emailer {
 	 * Builds the orange session heading for the lead email
 	 * @param 	object $session
 	 * @return 	string
-	 */	
+	 */
 	function build_history_header ( $session )
 	{
 		// @EMAIL - Use these variables to construct the heading for a specfic session
@@ -295,7 +295,7 @@ class LI_Emailer {
 		else
 		{
 			$session_source_text = "Direct";
-			
+
 		}
 
 		$historyHeader .= "<p class='form-field' style='color: #222222; display: block; font-family: Helvetica, Arial, sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0; padding: 3px 0 0;' align='left'><span class='traffic-source' style='font-weight: bold; color: #a43700;'>Traffic Source: </span>" . $session_source_text . "</p>";
@@ -310,7 +310,7 @@ class LI_Emailer {
 	 * Builds a row containing a page view for the lead email
 	 * @param 	object $pageview
 	 * @return 	string
-	 */	
+	 */
 	function build_history_row ( $pageview )
 	{
 		$historyRow = "\r\n";
@@ -330,7 +330,7 @@ class LI_Emailer {
 	/**
 	 * Builds the View All Contacts button for the lead email
 	 * @return 	string
-	 */	
+	 */
 	function build_button_row ( $lead_id )
 	{
 		$buttonRow = "\r\n";
@@ -349,8 +349,8 @@ class LI_Emailer {
 	 * @param	object 		history from get_lead_history()
 	 * @return	bool $email_sent 	Whether the email contents were sent successfully. A true return value does not automatically mean that the user received the email successfully. It just only means that the method used was able to process the request without any errors.
 	 */
-	function send_subscriber_confirmation_email ( $history ) 
-	{	
+	function send_subscriber_confirmation_email ( $history )
+	{
 		// Get email from plugin settings, if none set, use admin email
 		$options = get_option('leadin_options');
 		$leadin_email = ( $options['li_email'] ? $options['li_email'] : get_bloginfo('admin_email') ); // Get email from plugin settings, if none set, use admin email
@@ -362,7 +362,7 @@ class LI_Emailer {
 
 		// Email Base open
 		$body .= "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'><html xmlns='http://www.w3.org/1999/xhtml' xmlns='http://www.w3.org/1999/xhtml'><head><meta http-equiv='Content-Type' content='text/html;charset=utf-8'/><meta name='viewport' content='width=device-width'/></head><body style='width: 100% !important;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #222222;display: block;font-family: Helvetica, Arial, sans-serif;font-weight: normal;text-align: left;line-height: 19px;font-size: 14px;margin: 0;padding: 0;'><style type='text/css'>a:hover{color: #2795b6 !important;}a:active{color: #2795b6 !important;}a:visited{color: #2ba6cb !important;}h1 a:active{color: #2ba6cb !important;}h2 a:active{color: #2ba6cb !important;}h3 a:active{color: #2ba6cb !important;}h4 a:active{color: #2ba6cb !important;}h5 a:active{color: #2ba6cb !important;}h6 a:active{color: #2ba6cb !important;}h1 a:visited{color: #2ba6cb !important;}h2 a:visited{color: #2ba6cb !important;}h3 a:visited{color: #2ba6cb !important;}h4 a:visited{color: #2ba6cb !important;}h5 a:visited{color: #2ba6cb !important;}h6 a:visited{color: #2ba6cb !important;}.button:hover table td{background: #2795b6 !important;}.tiny-button:hover table td{background: #2795b6 !important;}.small-button:hover table td{background: #2795b6 !important;}.medium-button:hover table td{background: #2795b6 !important;}.large-button:hover table td{background: #2795b6 !important;}.button:hover{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.button:active{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.button:visited{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.tiny-button:hover{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.tiny-button:active{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.tiny-button:visited{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.small-button:hover{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.small-button:active{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.small-button:visited{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.medium-button:hover{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.medium-button:active{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.medium-button:visited{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.large-button:hover{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.large-button:active{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.large-button:visited{color: white !important;font-family: Helvetica, Arial, sans-serif;text-decoration: none;}.secondary:hover table td{background: #d0d0d0 !important;}.success:hover table td{background: #457a1a !important;}.alert:hover table td{background: #970b0e !important;}@media only screen and (max-width: 600px){table[class='body'] img{width: auto !important;height: auto !important;}table[class='body'] .container{width: 95% !important;}table[class='body'] .row{width: 100% !important;display: block !important;}table[class='body'] .wrapper{display: block !important;padding-right: 0 !important;}table[class='body'] .columns{table-layout: fixed !important;float: none !important;width: 100% !important;padding-right: 0px !important;padding-left: 0px !important;display: block !important;}table[class='body'] .column{table-layout: fixed !important;float: none !important;width: 100% !important;padding-right: 0px !important;padding-left: 0px !important;display: block !important;}table[class='body'] .wrapper.first .columns{display: table !important;}table[class='body'] .wrapper.first .column{display: table !important;}table[class='body'] table.columns td{width: 100%;}table[class='body'] table.column td{width: 100%;}table[class='body'] td.offset-by-one{padding-left: 0 !important;}table[class='body'] td.offset-by-two{padding-left: 0 !important;}table[class='body'] td.offset-by-three{padding-left: 0 !important;}table[class='body'] td.offset-by-four{padding-left: 0 !important;}table[class='body'] td.offset-by-five{padding-left: 0 !important;}table[class='body'] td.offset-by-six{padding-left: 0 !important;}table[class='body'] td.offset-by-seven{padding-left: 0 !important;}table[class='body'] td.offset-by-eight{padding-left: 0 !important;}table[class='body'] td.offset-by-nine{padding-left: 0 !important;}table[class='body'] td.offset-by-ten{padding-left: 0 !important;}table[class='body'] td.offset-by-eleven{padding-left: 0 !important;}table[class='body'] .expander{width: 9999px !important;}table[class='body'] .hide-for-small{display: none !important;}table[class='body'] .show-for-desktop{display: none !important;}table[class='body'] .show-for-small{display: inherit !important;}table[class='body'] .hide-for-desktop{display: inherit !important;}table[class='body'] .container.main{width: 100% !important;}}</style><table class='body' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;height: 100%;width: 100%;padding: 0;'><tr align='left' style='vertical-align: top; text-align: left; padding: 0;'><td class='center' align='center' valign='top' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: center;padding: 0 0 20px;'><center style='width: 100%;'>";
-		
+
 		// Email Header open
 		$body .= "<table class='row header' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;width: 100%;position: relative;padding: 0px;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td class='center' align='center' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: center;padding: 0;' valign='top'><center style='width: 100%;'><table class='container' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: inherit;width: 580px;margin:0 auto 10px auto; padding: 0;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td class='wrapper last' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;position: relative;padding: 10px 0px 0px;' align='left' valign='top'><table class='twelve columns' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;width: 580px;margin: 0 auto;padding: 0;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td class='two sub-columns' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;width: 100% !important;padding: 0px 0px 10px 0px;' align='left' valign='top'>";
 
@@ -385,7 +385,7 @@ class LI_Emailer {
 
 		// Main container open
 		$body .= "<table class='container main' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: inherit;width: 580px;margin: 0 auto;padding: 0;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;padding: 0;' align='left' valign='top'>";
-		
+
 		// Form Submission section open
 		$body .= "<table class='row section form-submission' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;width: 100%;position: relative;display: block;background: #deedf8;padding: 0px;' bgcolor='#deedf8'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td class='wrapper last' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;position: relative;padding: 0 0px 0 0;' align='left' valign='top'>";
 
@@ -394,7 +394,7 @@ class LI_Emailer {
 
 		// Form Submission Rows
 		$fields = json_decode(stripslashes($history->submission->form_fields), true);
-		
+
 		foreach ( $fields as $field )
 		{
 			$body .= $this->build_submission_row($field);
@@ -407,7 +407,7 @@ class LI_Emailer {
 		$body .= "<table class='row section' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;width: 100%;position: relative;display: block;margin-top: 20px;padding: 0px;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td class='wrapper last' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;position: relative;padding: 0 0px 0 0;' align='left' valign='top'><table class='twelve columns' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;width: 580px;margin: 0 auto;padding: 0;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;padding: 0px;' align='left' valign='top'><table class='button round' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;width: 100%;overflow: hidden;padding: 0;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td>";
 			$body .="You may also contact us at:<br/><a href='mailto:" . $leadin_email . "'>" . $leadin_email . "</a>";
 		$body .= "</td></tr></table></td><td class='expander' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;visibility: hidden;width: 0px;padding: 0;border: 0;' align='left' valign='top'></td></tr></table></td></tr></table>";
-		
+
 		// Build Powered by LeadIn row
 		$body .= "<table class='row section' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;width: 100%;position: relative;display: block;margin-top: 20px;padding: 0px;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td class='wrapper last' style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: left;position: relative;padding: 0 0px 0 0;' align='left' valign='top'><table class='twelve columns' style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;width: 580px;margin: 0 auto;padding: 0;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td style='padding: 10px 20px;' align='left' valign='top'><table style='border-spacing: 0;border-collapse: collapse;vertical-align: top;text-align: left;width: 100%;overflow: hidden;padding: 0;'><tr style='vertical-align: top;text-align: left;padding: 0;' align='left'><td style='word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;text-align: center;display: block;width: auto !important;font-size: 16px;padding: 10px 20px;' align='center' valign='top'>";
 			$body .="<div style='font-size: 11px; color: #888; padding: 0 0 5px 0;'>Powered by</div><a href='http://leadin.com/pop-subscribe-form-plugin-wordpress/'><img alt='LeadIn' height='20px' width='99px' src='http://leadin.com/wp-content/themes/LeadIn-WP-Theme/library/images/logos/Leadin_logo@2x.png' alt='leadin.com'/></a>";
@@ -418,11 +418,15 @@ class LI_Emailer {
 		// Email Base close
 		$body .= '</center></td></tr></table></body></html>';
 
+
+		$body = apply_filters( 'li_subscribe_body', $body, $fields );
+		$from = apply_filters( 'li_subscribe_from', $leadin_email );
+
 		// Each line in an email can only be 998 characters long, so lines need to be broken with a wordwrap
 		$body = wordwrap($body, 900, "\r\n");
 
-		$headers = "From: LeadIn <team@leadin.com>\r\n";
-		$headers.= "Reply-To: LeadIn <team@leadin.com>\r\n";
+		$headers = "From: LeadIn <".$from.">\r\n";
+		$headers.= "Reply-To: LeadIn <".$from.">\r\n";
 		$headers.= "X-Mailer: PHP/" . phpversion()."\r\n";
 		$headers.= "MIME-Version: 1.0\r\n";
 		$headers.= "Content-type: text/html; charset=utf-8\r\n";
@@ -433,4 +437,3 @@ class LI_Emailer {
 		return $email_sent;
 	}
 }
-?>
